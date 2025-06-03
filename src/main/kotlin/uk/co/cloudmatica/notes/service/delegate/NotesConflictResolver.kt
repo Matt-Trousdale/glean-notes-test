@@ -11,9 +11,7 @@ class NotesConflictResolver {
             .plus(remoteNotes)
             .groupBy { e -> e.id }
             .values
-            .map { result ->
-                noteResolution(result)
-            }
+            .map { result -> noteResolution(result) }
     }
 
     private fun noteResolution(result: List<Note>) = if (result.size == 2) {
